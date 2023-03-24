@@ -13,8 +13,6 @@
 
 ![Versión 1.0](./imgs/chat_v_1.0.png)
 
-<image src="./imgs/chat_v_1.0.png" alt="Versión 1.0" border="5px solid red"/>
-
 
 ### Puntos a resolver
 
