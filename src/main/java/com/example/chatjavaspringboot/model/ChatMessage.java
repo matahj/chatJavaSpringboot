@@ -1,22 +1,31 @@
 package com.example.chatjavaspringboot.model;
 
 public class ChatMessage {
-    private String userName;
-    private String message;
+    private Integer messageId;
+    private String username;
+    private String messageText;
 
-    public String getUserName() {
-        return userName;
+    public Integer getMessageId() {
+        return messageId;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setMessageId(Integer messageId) {
+        this.messageId = messageId;
     }
 
-    public String getMessage() {
-        return message;
+    public String getUsername() {
+        return username;
     }
 
-    public void setMessage(String message) {
-        this.message = message;
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getMessageText() {
+        return messageText;
+    }
+
+    public void setMessageText(String messageText) {
+        this.messageText = messageText;
     }
 }

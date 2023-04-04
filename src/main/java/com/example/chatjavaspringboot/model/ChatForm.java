@@ -1,16 +1,16 @@
 package com.example.chatjavaspringboot.model;
 
 public class ChatForm {
-    private String userName;
+    private String username;
     private String messageText;
     private String messageType;
 
     public String getUserName() {
-        return userName;
+        return username;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setUserName(String username) {
+        this.username = username;
     }
 
     public String getMessageText() {

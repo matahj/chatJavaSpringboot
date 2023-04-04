@@ -1,21 +1,28 @@
-# Chat Java SpringBoot
+# Chat Java Spring Boot
 
 ### Dependencias
 
 * Spring Web
+* Spring Security
+* MyBatis
+* H2 Database
 * Thymeleaf
 * Spring Boot DevTools
 
-### Avances
+### Descripción
+Es un chat en el que los usuarios se pueden "registrar" y después "logear" para intercambiar mensajes. Los nombres de usuario y contraseñas, así como los mensajes, se guardan en una base de datos SQL (in-memory). Las contraseñas se guardan "hasheadas".
 
-* Endpoint: "localhost:8080/chat".
-* Los usuarios deben escribir su nombre de usuario y el mensaje, pueden seleccionar entre tres formatos de texto: normal (Say), mayúsculas (Shout), minúsculas (Whisper). Los mensajes se guardan en una lista en memoria.
+Se utiliza la clase "WebSecurityConfigureAdapter", sin embargo es una clase "obsoleta" que no aparece en las versiones más actuales de Spring Security.
 
-![Versión 1.0](./imgs/chat_v_1.0.png)
+![Versión 2.0](./imgs/chat_v2.0_login.png)
+![Versión 2.0](./imgs/chat_v2.0_singup.png)
+![Versión 2.0](./imgs/chat_v2.0.png)
 
 
 ### Puntos a resolver
 
 * Hacer que el chat se actualice automáticamente para todos los usuairos cuando un usuario cualquiera envía un mensaje. Hasta el momento se actualiza unicamente para el usuario que envía el mensaje.
-* Implementar autenticación.
-* Implementar persistencia.
+
+
+
+

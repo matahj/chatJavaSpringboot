@@ -2,6 +2,7 @@ package com.example.chatjavaspringboot.controller;
 
 import com.example.chatjavaspringboot.model.ChatForm;
 import com.example.chatjavaspringboot.service.MessageService;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,13 +21,14 @@ public class ChatController {
     }
 
     @GetMapping
-    public String getChatPage(ChatForm chatForm, Model model){
+    public String getChatPage(ChatForm chatForm, Model model) {
         model.addAttribute("chatMessages", this.messageService.getChatMessages());
         return "chat";
     }
 
     @PostMapping
-    public String postChatMessage(ChatForm chatForm, Model model){
+    public String postChatMessage(Authentication authentication, ChatForm chatForm, Model model) {
+        chatForm.setUserName(authentication.getName());
         this.messageService.addMessage(chatForm);
         chatForm.setMessageText("");
         model.addAttribute("chatMessages", this.messageService.getChatMessages());
@@ -34,7 +36,9 @@ public class ChatController {
     }
 
     @ModelAttribute("allMessageTypes")
-    public String[] allMessageTypes(){
-        return new String[]{"Say", "Shout", "Whisper"};
+    public String[] allMessageTypes () {
+        return new String[] { "Say", "Shout", "Whisper" };
     }
+
+
 }
